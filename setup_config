@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "Create symlink for tmux configuration"
+ln -sf $PWD/config/tmux.conf $HOME/.tmux.conf
+
+echo "Create symlink for zprezto configuration"
+ln -sf $PWD/config/zpreztorc $HOME/.zpreztorc
+ln -sf $PWD/config/zshenv $HOME/.zshenv
+ln -sf $PWD/config/zshrc $HOME/.zshrc
+
+echo "Create symlink for gitconfig"
+ln -sf $PWD/config/gitconfig $HOME/.gitconfig
+
+echo "Create symlink for vim"
+ln -sf $PWD/vim/vimrc $HOME/.vimrc
+ln -sf $PWD/vim/monokai-phoenix.vim $HOME/.vim/colors/monokai-phoenix.vim

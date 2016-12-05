@@ -1,0 +1,239 @@
+set nocompatible " be iMproved
+filetype off " required!
+
+" Vundle setup
+" required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Plugin 'gmarik/vundle'
+
+" My Plugin here:
+"
+" original repos on github
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'scrooloose/nerdtree'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'Shougo/neocomplete.vim'
+" vim-scripts repos
+Plugin 'sheerun/vim-polyglot'
+Plugin 'robbles/logstash.vim'
+" non github repos
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'rdolgushin/groovy.vim'
+Plugin 'ntpeters/vim-better-whitespace' " Trailing whitespaces visual and deletion
+Plugin 'andrewstuart/vim-kubernetes'    " Kubernetes snippet
+Plugin 'SirVer/ultisnips'               " Snippet Engine
+Plugin 'Yggdroot/indentLine'            " vertical line for indent
+Plugin 'Lokaltog/vim-powerline'         " bottom bar
+Plugin 'tpope/vim-commentary'           " commentary
+Plugin 'chrisbra/Colorizer'             " commentary
+Plugin 'nvie/vim-flake8'
+Plugin 'tpope/vim-pathogen'
+" ...
+
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
+let g:UltiSnipsExpandTrigger="<c-b>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+filetype plugin indent on " required!
+"
+" Brief help
+" :BundleList - list configured bundles
+" :BundleInstall(!) - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!) - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+
+
+""""""""""""""""""""""""""""""""""""""""""""""
+"              General options
+""""""""""""""""""""""""""""""""""""""""""""""
+
+" No vi compatible mode
+" Enables vim features that makes it more useful
+set nocompatible
+
+" Display line numbers
+set number
+set relativenumber
+
+set clipboard=unnamedplus
+
+" switch leader key for mappings to ,
+let mapleader="\<Space>"
+
+" Switch on lexical highlights
+syntax on
+
+" Enforce black background
+set background=dark
+
+" Colorscheme used for syntax highlights
+colorscheme monokai-phoenix
+
+" Set number of colors at 256
+set t_Co=256
+
+" Show hidden chars
+set list
+
+" show line numbers
+set nu
+
+" Command line always displayed
+set laststatus=2
+
+" Customize display of tab characters >-
+set listchars=tab:>-
+
+" Activate enhanced completion mode in the command line
+set wildmenu
+
+" Customize completion behavior in the command line
+set wildmode=full
+
+" Affiche un curseur sur la totalité de la ligne courante
+set cursorline
+
+" always uses spaces instead of tab characters
+set expandtab
+
+" set the number of spaces inserted when pressing tab
+set tabstop=2
+autocmd FileType python setlocal tabstop=4
+
+" set the number of spaces inserted/removed when pressing >> or <<
+set shiftwidth=2
+autocmd FileType python setlocal shiftwidth=4
+
+" Enables mouse support in native vim
+set mouse=a
+
+" Does not close buffers on quit.
+" No need to save data before switching buffers.
+set hidden
+
+" show search matches as you type
+set incsearch
+
+" highlight search terms
+set hlsearch
+
+" ignore case if search pattern is all lowercase,
+" case-sensitive otherwise
+set smartcase
+
+" Enable deletion of previously entered characters, autoindent, and newlines
+set backspace=2
+
+" Autowrite on buffer switch
+set autowriteall
+
+" Encoding management
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  set fileencodings=ucs-bom,utf-8,latin1
+endif
+
+if &term =~ '256color'
+    " Disable Background Color Erase (BCE) so that color schemes
+    " work properly when Vim is used inside tmux and GNU screen.
+    set t_ut=
+endif
+
+"" Temporary files management (swap/undo)
+let vimdir = '$HOME/.vim'
+let myundodir = expand(vimdir . '/undo')
+let myswapdir = expand(vimdir . '/swap')
+let mycachedir = expand(vimdir . '/cache')
+
+let &runtimepath.=','.vimdir
+
+" Directories creation
+call system('mkdir ' . vimdir)
+call system('mkdir ' . myundodir)
+call system('mkdir ' . myswapdir)
+call system('mkdir ' . mycachedir)
+
+" Persistent undo with centralized files
+let &undodir = myundodir
+set undofile
+
+" Centralized swap files location
+let &directory = myswapdir
+
+" Customize font for gvim. The standard one is pretty ugly otherwise
+if has("gui_running")
+    set guifont=Fixed\ Regular\ 12
+else
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+endif
+
+" Add spell checking and automatic wrapping (72 col) to commit messages
+autocmd Filetype gitcommit,rst,markdown setlocal spell textwidth=72
+
+autocmd FileType c,cpp,java set cindent
+
+""""""""""""""""""""""""""""""""""""""""""""""
+"              General mappings
+""""""""""""""""""""""""""""""""""""""""""""""
+
+nmap <leader>c :nohlsearch<CR>
+nmap <leader>m :marks<CR>:g'
+nmap <leader>v :e ~/.vimrc<CR>
+nmap <leader>e :e <c-d>
+nmap <leader>w :w<CR>
+vmap <leader>y "+y
+nmap <leader>p "+p
+nmap <leader>bd :bd<CR>
+nmap <leader>so :so ~/.vimrc<CR>
+vnoremap <leader>j :%!python -mjson.tool<CR>
+
+" NOTE: comments after Bundle command are not allowed..
+
+set splitright
+set splitbelow
+set updatetime=250
+
+" Flake8
+let g:flake8_show_in_gutter = 1
+let g:flake8_show_quickfix=1
+let g:lake8_show_in_file=1
+autocmd BufWritePost *.py call Flake8()
+
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+" Recommended key-mappings.
+" " <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  "return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  " For no inserting <CR> key.
+  return pumvisible() ? "\<C-y> " : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" Close popup by <Space>.
+inoremap <expr><Space> pumvisible() ? "\<C-y> " : "\<Space>"
+
+nmap <C-n> :NERDTreeToggle<CR>

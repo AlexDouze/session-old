@@ -1,0 +1,61 @@
+#
+# Defines environment variables.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Ensure that a non-login, non-interactive shell has a defined environment.
+if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprofile"
+fi
+# Add local pyhton path
+export PATH=$PATH:$HOME/.local/bin
+
+#fasd
+eval "$(fasd --init auto)"
+alias a='fasd -a'        # any
+alias s='fasd -si'       # show / search / select
+alias d='fasd -d'        # directory
+alias f='fasd -f'        # file
+alias sd='fasd -sid'     # interactive directory selection
+alias sf='fasd -sif'     # interactive file selection
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i' # cd with interactive selection
+alias v='f -e vim'       # quick opening files with vim
+
+# git
+alias ggr="git graph"
+alias ggra="git graph --all"
+alias subup="git submodule sync && git submodule update --init --recursive"
+
+# watch
+alias wa='watch -n 0.1'
+alias wad='watch -n 1 -d'
+alias wak='watch -n 1 kubectl'
+
+alias t='tig'
+#Docker
+alias dk='docker'
+alias dkc='docker-compose'
+
+# Vault
+export VAULT_ADDR=https://vault.steery.io:443
+export VAULT_TOKEN=6bf56197-7cfc-73e0-c0ad-373fae6268ee
+export VAULT_USER_ID=983c1ff5-381e-462a-ba27-d658b8c693ec
+
+export ANSIBLE_LIBRARY=/home/douze/data/rds-ops/ansible/library
+
+# Kubernetes
+#export KOPS_STATE_STORE=s3://cluster.internal.steery.io
+#export KOPS_STATE_STORE=s3://kube-cluster-easymile
+export KOPS_STATE_STORE=s3://dev-cluster-easymile
+alias kb='kubectl'
+alias kf='kubefed'
+alias kbc='kubectl config use-context'
+alias randpass='openssl rand -base64 32 | tr -d /=+ | cut -c -30'
+#Terraform
+alias tf="terraform"
+
+# Thefuck
+alias fuck-it="export THEFUCK_REQUIRE_CONFIRMATION=False; fuck; export THEFUCK_REQUIRE_CONFIRMATION=True"
