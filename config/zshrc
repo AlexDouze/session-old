@@ -26,6 +26,11 @@ fi
 if [[ -x "$(command -v kubectl)" ]]; then
   source <(kubectl completion zsh)
 fi
+#
+# Helm
+if [[ -x "$(command -v helm)" ]]; then
+  source <(helm completion zsh)
+fi
 
 source $HOME/.local/bin/aws_zsh_completer.sh
 # Customize to your needs...
