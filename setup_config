@@ -14,3 +14,6 @@ ln -sf $PWD/config/gitconfig $HOME/.gitconfig
 echo "Create symlink for vim"
 ln -sf $PWD/vim/vimrc $HOME/.vimrc
 ln -sf $PWD/vim/monokai-phoenix.vim $HOME/.vim/colors/monokai-phoenix.vim
+
+echo "Create symlink for x509"
+sudo ln -sf $PWD/scripts/x509 /usr/bin/x509
