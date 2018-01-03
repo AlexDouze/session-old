@@ -35,7 +35,8 @@ zstyle ':prezto:load' pmodule \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt' \
-  'git'
+  'git' \
+  'kubernetes'
 
 #
 # Autosuggestions
