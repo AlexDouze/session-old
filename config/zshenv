@@ -32,7 +32,6 @@ alias subup="git submodule sync && git submodule update --init --recursive"
 # watch
 alias wa='watch -n 0.1'
 alias wad='watch -n 1 -d'
-alias wak='watch -n 1 kubectl'
 
 alias t='tig'
 #Docker
@@ -50,9 +49,6 @@ export ANSIBLE_LIBRARY=/home/douze/data/rds-ops/ansible/library
 #export KOPS_STATE_STORE=s3://cluster.internal.steery.io
 #export KOPS_STATE_STORE=s3://kube-cluster-easymile
 export KOPS_STATE_STORE=s3://dev-cluster-easymile
-alias kb='kubectl'
-alias kf='kubefed'
-alias kbc='kubectl config use-context'
 alias randpass='openssl rand -base64 32 | tr -d /=+ | cut -c -30'
 #Terraform
 alias tf="terraform"

@@ -22,11 +22,6 @@ if [[ -z "$TMUX" ]] ;then
     fi
 fi
 
-# Kubernetes
-if [[ -x "$(command -v kubectl)" ]]; then
-  source <(kubectl completion zsh)
-fi
-#
 # Helm
 if [[ -x "$(command -v helm)" ]]; then
   source <(helm completion zsh)
