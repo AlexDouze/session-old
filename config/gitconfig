@@ -1,5 +1,5 @@
 [user]
-	email = alexandre.ledit@steery.io
+	email = alexandre.ledit@easymile.com
 	name = Alexandre Ledit
 
 [push]
@@ -20,7 +20,7 @@
 
 [core]
     pager = less
-    editor = vim
+    editor = vimx
 [push]
     default = simple
 [merge]
