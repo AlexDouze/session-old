@@ -1,0 +1,94 @@
+#!/bin/bash
+
+sudo dnf -y install dnf-plugins-core
+
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+
+sudo dnf install -y \
+	chromium \
+	docker-ce \
+  gnome-tweak-tool \
+	python-devel \
+  tig \
+	tmux \
+	util-linux-user \
+	vim-X11 \
+	zsh
+
+# Enable and start docker daemon
+sudo usermod -aG docker "$USER"
+sudo systemctl enable docker
+sudo systemctl start docker
+
+# Awscli
+pip install --user awscli
+
+# Zprezto
+if [ ! -d "$HOME/.zprezto" ]; then
+	git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+fi
+
+
+# Fasd
+if [[ ! -x "$(command -v fasd)" ]]; then
+  wget https://github.com/clvv/fasd/tarball/1.0.1
+  tar xvzf 1.0.1
+  rm -f 1.0.1
+  cd clvv-fasd-4822024
+  sudo make install
+  cd ..
+  rm -rf clvv-fasd-4822024
+fi
+
+# Vim Vundle
+if [ ! -d "$HOME/.vim/bundle/vundle" ]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/vundle
+    mkdir -p ~/.vim/colors
+fi
+
+# Install k8s tools
+# kubectl
+if [[ ! -x "$(command -v kubectl)" ]]; then
+  curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.9.1/bin/linux/amd64/kubectl
+  chmod +x kubectl
+  mv kubectl $HOME/.local/bin/kubectl-1.9.1
+  ln -sf $HOME/.local/bin/kubectl-1.9.1 $HOME/.local/bin/kubectl
+fi
+
+# helm
+if [[ ! -x "$(command -v helm)" ]]; then
+  wget -O $HOME/helm.tar.gz https://storage.googleapis.com/kubernetes-helm/helm-v2.7.2-linux-amd64.tar.gz
+  tar xvzf $HOME/helm.tar.gz
+  mv $HOME/linux-amd64/helm $HOME/.local/bin/helm-2.7.2
+  ln -sf $HOME/.local/bin/helm-2.7.2 $HOME/.local/bin/helm
+  rm -rf $HOME/linux-amd64 $HOME/helm.tar.gz
+fi
+
+# kops
+if [[ ! -x "$(command -v kops)" ]]; then
+  wget -O $HOME/kops https://github.com/kubernetes/kops/releases/download/1.8.0/kops-linux-amd64
+  chmod +x $HOME/kops
+  mv $HOME/kops $HOME/.local/bin/kops-1.8.0
+  ln -sf $HOME/.local/bin/kops-1.8.0 $HOME/.local/bin/kops
+fi
+
+# Create symlinks for config files
+echo "Create symlink for tmux configuration"
+ln -sf $PWD/config/tmux.conf $HOME/.tmux.conf
+
+echo "Create symlink for zprezto configuration"
+ln -sf $PWD/config/zpreztorc $HOME/.zpreztorc
+ln -sf $PWD/config/zshenv $HOME/.zshenv
+ln -sf $PWD/config/zshrc $HOME/.zshrc
+
+echo "Create symlink for gitconfig"
+ln -sf $PWD/config/gitconfig $HOME/.gitconfig
+
+echo "Create symlink for vim"
+ln -sf $PWD/vim/vimrc $HOME/.vimrc
+ln -sf $PWD/vim/monokai-phoenix.vim $HOME/.vim/colors/monokai-phoenix.vim
+
+echo "Create symlink for x509"
+sudo ln -sf $PWD/scripts/x509 /usr/bin/x509
+
+chsh -s /bin/zsh

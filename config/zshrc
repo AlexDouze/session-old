@@ -41,5 +41,3 @@ burn_iso2usb () {
   fi
   sudo dd bs=4M if="$1" of="$2" status=progress && sync
 }
-
-eval $(thefuck --alias)
