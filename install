@@ -22,7 +22,7 @@ sudo systemctl enable docker
 sudo systemctl start docker
 
 # Awscli
-pip install --user awscli
+pip install --user awscli flake8
 
 # Zprezto
 if [ ! -d "$HOME/.zprezto" ]; then
