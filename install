@@ -17,7 +17,8 @@ sudo dnf install -y \
   tmux \
   util-linux-user \
   vim-X11 \
-  zsh
+  zsh \
+ https://prerelease.keybase.io/keybase_amd64.rpm 
 
 sudo dnf group install -y "Development Libraries" "Development Tools"
 
