@@ -21,7 +21,10 @@ sudo dnf install -y \
   util-linux-user \
   vim-X11 \
   zsh \
- https://prerelease.keybase.io/keybase_amd64.rpm 
+
+if [[ ! -x "$(command -v keybase)" ]]; then
+ sudo dnf install -y https://prerelease.keybase.io/keybase_amd64.rpm
+fi
 
 sudo dnf group install -y "Development Libraries" "Development Tools"
 
