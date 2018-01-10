@@ -85,6 +85,14 @@ if [[ ! -x "$(command -v kops)" ]]; then
   ln -sf $HOME/.local/bin/kops-1.8.0 $HOME/.local/bin/kops
 fi
 
+# Vault
+if [[ ! -x "$(command -v vault)" ]]; then
+  wget -O $HOME/vault.zip https://releases.hashicorp.com/vault/0.9.1/vault_0.9.1_linux_amd64.zip
+  unzip $HOME/vault.zip -d $HOME
+  mv $HOME/vault $HOME/.local/bin/vault
+  rm -f $HOME/vault.zip
+fi
+
 # Create symlinks for config files
 echo "Create symlink for tmux configuration"
 ln -sf $PWD/config/tmux.conf $HOME/.tmux.conf
