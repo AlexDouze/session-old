@@ -19,6 +19,8 @@ sudo dnf install -y \
   vim-X11 \
   zsh
 
+sudo dnf group install -y "Development Libraries" "Development Tools"
+
 # Enable and start docker daemon
 sudo usermod -aG docker "$USER"
 sudo systemctl enable docker
