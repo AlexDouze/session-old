@@ -20,6 +20,7 @@ sudo dnf install -y \
   tmux \
   util-linux-user \
   vim-X11 \
+  yp-tools \
   zsh \
 
 if [[ ! -x "$(command -v keybase)" ]]; then
