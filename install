@@ -16,6 +16,7 @@ sudo dnf install -y \
   htop \
   lcov \
   python-devel \
+  syncthing \
   tig \
   tmux \
   util-linux-user \
