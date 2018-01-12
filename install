@@ -59,39 +59,75 @@ if [ ! -d "$HOME/.vim/bundle/vundle" ]; then
     mkdir -p ~/.vim/colors
 fi
 
-# Install k8s tools
+## Install tools
+set_current_version() {
+  echo "Setting current $1 to $2"
+  ln -sf $HOME/.local/bin/$1-$2 $HOME/.local/bin/$1
+}
+
 # kubectl
-if [[ ! -x "$(command -v kubectl)" ]]; then
-  curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.9.1/bin/linux/amd64/kubectl
-  chmod +x kubectl
-  mv kubectl $HOME/.local/bin/kubectl-1.9.1
-  ln -sf $HOME/.local/bin/kubectl-1.9.1 $HOME/.local/bin/kubectl
-fi
+get_kubectl() {
+  echo "Getting Kubectl $1"
+  if [[ ! -f "$HOME/.local/bin/kubectl-$1" ]]; then
+    curl -LO "https://storage.googleapis.com/kubernetes-release/release/v$1/bin/linux/amd64/kubectl"
+    chmod +x kubectl
+    mv kubectl $HOME/.local/bin/kubectl-$1
+  fi
+}
+
+get_kubectl "1.9.1"
+get_kubectl "1.7.12"
+get_kubectl "1.8.6"
+
+set_current_version "kubectl" "1.9.1"
 
 # helm
-if [[ ! -x "$(command -v helm)" ]]; then
-  wget -O $HOME/helm.tar.gz https://storage.googleapis.com/kubernetes-helm/helm-v2.7.2-linux-amd64.tar.gz
-  tar xvzf $HOME/helm.tar.gz -C $HOME
-  mv $HOME/linux-amd64/helm $HOME/.local/bin/helm-2.7.2
-  ln -sf $HOME/.local/bin/helm-2.7.2 $HOME/.local/bin/helm
-  rm -rf $HOME/linux-amd64 $HOME/helm.tar.gz
-fi
+get_helm() {
+  echo "Getting Helm $1"
+  if [[ ! -f "$HOME/.local/bin/helm-$1" ]]; then
+    wget -O $HOME/helm.tar.gz "https://storage.googleapis.com/kubernetes-helm/helm-v$1-linux-amd64.tar.gz"
+    tar xvzf $HOME/helm.tar.gz -C $HOME
+    mv $HOME/linux-amd64/helm $HOME/.local/bin/helm-$1
+    rm -rf $HOME/linux-amd64 $HOME/helm.tar.gz
+  fi
+}
+
+get_helm "2.8.0-rc.1"
+get_helm "2.7.2"
+get_helm "2.6.2"
+
+set_current_version "helm" "2.7.2"
 
 # kops
-if [[ ! -x "$(command -v kops)" ]]; then
-  wget -O $HOME/kops https://github.com/kubernetes/kops/releases/download/1.8.0/kops-linux-amd64
-  chmod +x $HOME/kops
-  mv $HOME/kops $HOME/.local/bin/kops-1.8.0
-  ln -sf $HOME/.local/bin/kops-1.8.0 $HOME/.local/bin/kops
-fi
+get_kops() {
+  echo "Getting kops $1"
+  if [[ ! -f "$HOME/.local/bin/kops-$1" ]]; then
+    wget -O $HOME/kops https://github.com/kubernetes/kops/releases/download/$1/kops-linux-amd64
+    chmod +x $HOME/kops
+    mv $HOME/kops $HOME/.local/bin/kops-$1
+  fi
+}
 
-# Vault
-if [[ ! -x "$(command -v vault)" ]]; then
-  wget -O $HOME/vault.zip https://releases.hashicorp.com/vault/0.9.1/vault_0.9.1_linux_amd64.zip
-  unzip $HOME/vault.zip -d $HOME
-  mv $HOME/vault $HOME/.local/bin/vault
-  rm -f $HOME/vault.zip
-fi
+get_kops "1.8.0"
+get_kops "1.7.1"
+
+set_current_version "kops" "1.8.0"
+
+# # Vault
+get_vault() {
+  echo "Getting vault $1"
+  if [[ ! -f "$HOME/.local/bin/vault-$1" ]]; then
+    wget -O $HOME/vault.zip https://releases.hashicorp.com/vault/$1/vault_$1_linux_amd64.zip
+    unzip $HOME/vault.zip -d $HOME
+    mv $HOME/vault $HOME/.local/bin/vault-$1
+    rm -f $HOME/vault.zip
+  fi
+}
+
+get_vault "0.9.1"
+get_vault "0.8.3"
+
+set_current_version "vault" "0.9.1"
 
 # Create symlinks for config files
 echo "Create symlink for tmux configuration"
