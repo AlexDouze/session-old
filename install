@@ -40,6 +40,9 @@ pip install --user awscli flake8 boto
 if [ ! -d "$HOME/.zprezto" ]; then
 	git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 fi
+if [ ! -d "$HOME/.zprezto-contrib" ]; then
+  git clone --recursive https://github.com/belak/prezto-contrib "${ZDOTDIR:-$HOME}/.zprezto-contrib"
+fi
 
 
 # Fasd
