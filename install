@@ -38,7 +38,7 @@ pip install --user awscli flake8 boto
 
 # Zprezto
 if [ ! -d "$HOME/.zprezto" ]; then
-	git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+	git clone --recursive git@github.com:AlexDouze/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 fi
 if [ ! -d "$HOME/.zprezto-contrib" ]; then
   git clone --recursive https://github.com/AlexDouze/prezto-contrib.git "${ZDOTDIR:-$HOME}/.zprezto-contrib"
