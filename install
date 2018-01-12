@@ -41,7 +41,7 @@ if [ ! -d "$HOME/.zprezto" ]; then
 	git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 fi
 if [ ! -d "$HOME/.zprezto-contrib" ]; then
-  git clone --recursive https://github.com/belak/prezto-contrib "${ZDOTDIR:-$HOME}/.zprezto-contrib"
+  git clone --recursive https://github.com/AlexDouze/prezto-contrib.git "${ZDOTDIR:-$HOME}/.zprezto-contrib"
 fi
 
 
