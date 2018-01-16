@@ -35,6 +35,29 @@ sudo usermod -aG docker "$USER"
 sudo systemctl enable docker
 sudo systemctl start docker
 
+set_current_version() {
+  echo "Setting current $1 to $2"
+  rm -f $HOME/.local/bin/$1
+  ln -sf $HOME/.local/bin/$1-$2 $HOME/.local/bin/$1
+}
+
+# Go
+get_go () {
+  echo "Getting Go $1"
+  if [[ ! -d "$HOME/.local/bin/go-$1" ]]; then
+    wget -O $HOME/go.tar.gz https://dl.google.com/go/go$1.linux-amd64.tar.gz
+    tar xvzf $HOME/go.tar.gz -C $HOME
+    mv $HOME/go $HOME/.local/bin/go-$1
+    rm -rf $HOME/go $HOME/go.tar.gz
+  fi
+}
+
+get_go "1.9.2"
+get_go "1.8.5"
+
+set_current_version "go" "1.9.2"
+mkdir -p $HOME/.local/bin/go_root
+
 # Awscli
 pip install --user awscli flake8 boto
 
@@ -65,10 +88,6 @@ if [ ! -d "$HOME/.vim/bundle/vundle" ]; then
 fi
 
 ## Install tools
-set_current_version() {
-  echo "Setting current $1 to $2"
-  ln -sf $HOME/.local/bin/$1-$2 $HOME/.local/bin/$1
-}
 
 # kubectl
 get_kubectl() {
