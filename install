@@ -14,6 +14,7 @@ sudo dnf install -y \
   gcc-c++ \
   gnome-tweak-tool \
   htop \
+  jq \
   lcov \
   python-devel \
   syncthing \
@@ -22,7 +23,7 @@ sudo dnf install -y \
   util-linux-user \
   vim-X11 \
   yp-tools \
-  zsh \
+  zsh
 
 if [[ ! -x "$(command -v keybase)" ]]; then
  sudo dnf install -y https://prerelease.keybase.io/keybase_amd64.rpm
