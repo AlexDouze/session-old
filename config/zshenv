@@ -46,9 +46,7 @@ alias dk='docker'
 alias sync-browser='syncthing -browser-only'
 
 # Vault
-export VAULT_ADDR=https://vault.steery.io:443
-export VAULT_TOKEN=6bf56197-7cfc-73e0-c0ad-373fae6268ee
-export VAULT_USER_ID=983c1ff5-381e-462a-ba27-d658b8c693ec
+export VAULT_ADDR=https://vault.eu.easymile.com:8200
 
 # Kubernetes
 export KOPS_STATE_STORE=s3://easymile-dev-clusters
