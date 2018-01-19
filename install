@@ -22,6 +22,7 @@ sudo dnf install -y \
   tmux \
   util-linux-user \
   vim-X11 \
+  vim-enhanced \
   yp-tools \
   zsh
 
