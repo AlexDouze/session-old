@@ -33,6 +33,11 @@ Plugin 'tpope/vim-commentary'           " commentary
 Plugin 'chrisbra/Colorizer'             " commentary
 Plugin 'nvie/vim-flake8'
 Plugin 'tpope/vim-pathogen'
+Plugin 'c9s/helper.vim'
+Plugin 'c9s/treemenu.vim'
+Plugin 'c9s/vikube.vim'
+Plugin 'Shougo/neosnippet.vim'
+Plugin 'Shougo/neosnippet-snippets'
 " ...
 
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
@@ -40,6 +45,13 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 let g:UltiSnipsExpandTrigger="<c-b>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" Neosnippet Conf
+imap   <C-k>      <Plug>(neosnippet_expand_or_jump)
+smap   <C-k>      <Plug>(neosnippet_expand_or_jump)
+xmap   <C-k>      <Plug>(neosnippet_expand_target)
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 filetype plugin indent on " required!
 "
