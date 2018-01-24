@@ -161,6 +161,22 @@ sudo wget -O $HOME/.config/systemd/user/syncthing.service https://raw.githubuser
 systemctl --user enable syncthing.service
 systemctl --user start syncthing.service
 
+# Exercism
+get_exercism () {
+  echo "Getting exercism $1"
+  if [[ ! -f "$HOME/.local/bin/exercism-$1" ]]; then
+    wget -O $HOME/exercism.tgz https://github.com/exercism/cli/releases/download/v$1/exercism-linux-64bit.tgz
+    tar xvzf $HOME/exercism.tgz -C $HOME
+    mv $HOME/exercism $HOME/.local/bin/exercism-$1
+    rm -f $HOME/exercism.tgz
+  fi
+}
+
+get_exercism "2.4.1"
+
+set_current_version "exercism" "2.4.1"
+
+
 # Create symlinks for config files
 echo "Create symlink for tmux configuration"
 ln -sf $PWD/config/tmux.conf $HOME/.tmux.conf
