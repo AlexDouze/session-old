@@ -58,7 +58,6 @@ get_go "1.9.2"
 get_go "1.8.5"
 
 set_current_version "go" "1.9.2"
-mkdir -p $HOME/.local/bin/go_root
 
 # Awscli
 pip install --user awscli flake8 boto

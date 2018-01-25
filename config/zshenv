@@ -10,8 +10,9 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 # Add local pyhton path
-export GOROOT=$HOME/.local/bin/go_root
-export PATH=$PATH:$HOME/.local/bin:$HOME/.local/bin/go/bin:$HOME/.local/bin/go_root/bin
+export GOROOT=$HOME/.local/bin/go
+export GOPATH=$HOME/Data/go
+export PATH=$PATH:$HOME/.local/bin:$HOME/.local/bin/go/bin:$GOPATH/bin
 
 # vim
 alias vi='vimx'
