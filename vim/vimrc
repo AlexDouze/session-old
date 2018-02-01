@@ -38,6 +38,7 @@ Plugin 'c9s/treemenu.vim'
 Plugin 'c9s/vikube.vim'
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neosnippet-snippets'
+Plugin 'fatih/vim-go'
 " ...
 
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
