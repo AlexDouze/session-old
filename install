@@ -16,13 +16,14 @@ sudo dnf install -y \
   htop \
   jq \
   lcov \
+  meld \
   python-devel \
   syncthing \
   tig \
   tmux \
   util-linux-user \
-  vim-X11 \
   vim-enhanced \
+  vim-X11 \
   yp-tools \
   zsh
 
