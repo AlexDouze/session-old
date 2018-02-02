@@ -18,6 +18,7 @@ sudo dnf install -y \
   lcov \
   meld \
   python-devel \
+  sqlite \
   syncthing \
   tig \
   tmux \
