@@ -119,11 +119,11 @@ get_helm() {
   fi
 }
 
-get_helm "2.8.0-rc.1"
+get_helm "2.8.0"
 get_helm "2.7.2"
 get_helm "2.6.2"
 
-set_current_version "helm" "2.7.2"
+set_current_version "helm" "2.8.0"
 
 # kops
 get_kops() {
