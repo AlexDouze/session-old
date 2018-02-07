@@ -41,3 +41,6 @@ burn_iso2usb () {
   fi
   sudo dd bs=4M if="$1" of="$2" status=progress && sync
 }
+
+# added by travis gem
+[ -f /home/douze/.travis/travis.sh ] && source /home/douze/.travis/travis.sh

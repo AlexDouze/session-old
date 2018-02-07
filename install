@@ -17,8 +17,11 @@ sudo dnf install -y \
   jq \
   lastpass-cli \
   lcov \
+  libtool \
   meld \
   python-devel \
+  ruby \
+  ruby-devel \
   sqlite \
   syncthing \
   tig \
@@ -64,6 +67,9 @@ set_current_version "go" "1.9.2"
 
 # Pip install
 pip install --user awscli flake8 boto
+
+# Gem install
+gem install travis
 
 # Zprezto
 if [ ! -d "$HOME/.zprezto" ]; then
