@@ -62,7 +62,7 @@ get_go "1.8.5"
 
 set_current_version "go" "1.9.2"
 
-# Awscli
+# Pip install
 pip install --user awscli flake8 boto
 
 # Zprezto
