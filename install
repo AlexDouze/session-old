@@ -15,6 +15,7 @@ sudo dnf install -y \
   gnome-tweak-tool \
   htop \
   jq \
+  lastpass-cli \
   lcov \
   meld \
   python-devel \
