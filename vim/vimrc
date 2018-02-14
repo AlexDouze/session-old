@@ -39,6 +39,7 @@ Plugin 'c9s/vikube.vim'
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'fatih/vim-go'
+Plugin 'majutsushi/tagbar'              " Listing tags
 " ...
 
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
@@ -250,3 +251,24 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><Space> pumvisible() ? "\<C-y> " : "\<Space>"
 
 nmap <C-n> :NERDTreeToggle<CR>
+
+" Add an easier mapping for omnifunc
+inoremap <silent> ,, <C-x><C-o>
+
+""""""""""""""""""""""""""""""""""""""""""""""
+"              vim-go settings
+""""""""""""""""""""""""""""""""""""""""""""""
+
+au Filetype go nnoremap   <silent>   <leader>ga   :GoAlternate<CR>
+au Filetype go nnoremap   <silent>   <leader>gb   :GoBuild<CR>
+au Filetype go nnoremap   <silent>   <leader>gc   :GoCoverageToggle<CR>
+au Filetype go nnoremap   <silent>   <leader>gd   :GoDoc<CR>
+au Filetype go nnoremap   <silent>   <leader>ge   :GoDecls<CR>
+au Filetype go nnoremap   <silent>   <leader>ged  :GoDeclsDir<CR>
+au Filetype go nnoremap   <silent>   <leader>gg   :GoGenerate<CR>
+au Filetype go nnoremap   <silent>   <leader>gi   :GoImplements<CR>
+au Filetype go nnoremap   <silent>   <leader>gt   :GoTest<CR>
+nnoremap   <silent>   <leader>t   :TagbarToggle<CR>
+
+let g:go_auto_type_info = 1
+let g:go_metalinter_autosave = 1

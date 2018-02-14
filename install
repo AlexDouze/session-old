@@ -10,6 +10,7 @@ sudo dnf install -y \
   ansible \
   chromium \
   cmake \
+  ctags \
   docker-ce \
   gcc-c++ \
   gnome-tweak-tool \
