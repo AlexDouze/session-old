@@ -20,6 +20,7 @@ sudo dnf install -y \
   lcov \
   libtool \
   meld \
+  nmap \
   python-devel \
   ruby \
   ruby-devel \
