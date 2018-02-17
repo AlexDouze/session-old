@@ -134,6 +134,10 @@ get_helm "2.6.2"
 
 set_current_version "helm" "2.8.0"
 
+if [[ -z $(helm plugin list | grep diff) ]]; then
+  helm plugin install https://github.com/hypnoglow/helm-s3.git --version 0.5.2
+fi
+
 # kops
 get_kops() {
   echo "Getting kops $1"
