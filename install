@@ -212,3 +212,5 @@ echo "Create symlink for x509"
 sudo ln -sf $PWD/scripts/x509 /usr/bin/x509
 
 chsh -s /bin/zsh
+
+setxkbmap fr
