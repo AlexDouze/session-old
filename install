@@ -139,6 +139,21 @@ if [[ -z $(helm plugin list | grep diff) ]]; then
   helm plugin install https://github.com/hypnoglow/helm-s3.git --version 0.5.2
 fi
 
+#kubeless
+get_kubeless() {
+  echo "Getting kubeless $1"
+  if [[ ! -f "$HOME/.local/bin/kubeless-$1" ]]; then
+    wget -O "$HOME/kubeless.zip" "https://github.com/kubeless/kubeless/releases/download/v$1/kubeless_linux-amd64.zip"
+    unzip "$HOME/kubeless.zip" -d $HOME
+    mv "$HOME/bundles/kubeless_linux-amd64/kubeless" "$HOME/.local/bin/kubeless-$1"
+    rm -rf "$HOME/kubeless.zip" "$HOME/bundles"
+  fi
+}
+
+get_kubeless "0.4.0"
+get_kubeless "0.3.1"
+set_current_version "kubeless" "0.3.1"
+
 # kops
 get_kops() {
   echo "Getting kops $1"
