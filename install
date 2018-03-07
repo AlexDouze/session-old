@@ -22,6 +22,8 @@ sudo dnf install -y \
   meld \
   nmap \
   python-devel \
+  python2-ipython \
+  python3-ipython \
   ruby \
   ruby-devel \
   sqlite \
