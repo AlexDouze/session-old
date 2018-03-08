@@ -20,6 +20,7 @@ sudo dnf install -y \
   lcov \
   libtool \
   meld \
+  mosquitto \
   nmap \
   python-devel \
   python2-ipython \
