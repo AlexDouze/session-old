@@ -156,7 +156,7 @@ get_kubeless() {
 
 get_kubeless "0.4.0"
 get_kubeless "0.3.1"
-set_current_version "kubeless" "0.3.1"
+set_current_version "kubeless" "0.4.0"
 
 # kops
 get_kops() {
