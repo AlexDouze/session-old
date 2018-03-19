@@ -23,6 +23,7 @@ sudo dnf install -y \
   mosquitto \
   nmap \
   python-devel \
+  python3-devel \
   python2-ipython \
   python3-ipython \
   ruby \
