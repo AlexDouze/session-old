@@ -28,6 +28,7 @@ sudo dnf install -y \
   python3-ipython \
   ruby \
   ruby-devel \
+  fuse-sshfs \
   sqlite \
   syncthing \
   tig \
