@@ -12,6 +12,7 @@ sudo dnf install -y \
   cmake \
   ctags \
   docker-ce \
+  exa \
   gcc-c++ \
   gnome-tweak-tool \
   htop \
