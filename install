@@ -195,6 +195,21 @@ get_vault "0.8.3"
 
 set_current_version "vault" "0.10.0"
 
+# # Terraform
+get_terraform() {
+  echo "Getting terraform $1"
+  if [[ ! -f "$HOME/.local/bin/terraform-$1" ]]; then
+    wget -O $HOME/terraform.zip https://releases.hashicorp.com/terraform/$1/terraform_$1_linux_amd64.zip
+    unzip $HOME/terraform.zip -d $HOME
+    mv $HOME/terraform $HOME/.local/bin/terraform-$1
+    rm -f $HOME/terraform.zip
+  fi
+}
+
+get_terraform "0.11.7"
+
+set_current_version "terraform" "0.11.7"
+
 # Create syncthing service
 mkdir -p $HOME/.config/systemd/user/
 sudo wget -O $HOME/.config/systemd/user/syncthing.service https://raw.githubusercontent.com/syncthing/syncthing/master/etc/linux-systemd/user/syncthing.service
