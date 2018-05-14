@@ -15,6 +15,7 @@ sudo dnf install -y \
   exa \
   gcc-c++ \
   gnome-tweak-tool \
+  httpie \
   htop \
   jq \
   lastpass-cli \
