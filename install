@@ -154,6 +154,7 @@ get_helm "2.6.2"
 
 set_current_version "helm" "2.9.1"
 
+helm init --client-only
 if [[ -z $(helm plugin list | grep s3) ]]; then
   helm plugin install https://github.com/hypnoglow/helm-s3.git --version 0.5.2
 fi
