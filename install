@@ -48,6 +48,11 @@ fi
 sudo dnf group install -y "Development Libraries" "Development Tools"
 
 # Enable and start docker daemon
+if getent group docker; then
+  echo "docker group exist"
+else
+  sudo groupadd docker
+fi
 sudo usermod -aG docker "$USER"
 sudo systemctl enable docker
 sudo systemctl start docker
