@@ -74,6 +74,8 @@ get_go "1.8.5"
 
 set_current_version "go" "1.9.2"
 
+mkdir -p $HOME/Data/go
+
 # Pip install
 pip install --upgrade --user awscli flake8 boto gnupg hvac minio pip
 
