@@ -57,6 +57,8 @@ sudo usermod -aG docker "$USER"
 sudo systemctl enable docker
 sudo systemctl start docker
 
+mkdir -p $HOME/.local/bin
+
 set_current_version() {
   echo "Setting current $1 to $2"
   rm -f $HOME/.local/bin/$1
