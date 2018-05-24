@@ -12,7 +12,7 @@ fi
 # Add local pyhton path
 export GOROOT=$HOME/.local/bin/go
 export GOPATH=$HOME/Data/go
-export PATH=$PATH:$HOME/.local/bin:$HOME/.local/bin/go/bin:$GOPATH/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/.local/bin/go/bin:$GOPATH/bin:$HOME/Data/scripts
 
 # vim
 alias vi='vimx'

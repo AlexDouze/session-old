@@ -118,11 +118,12 @@ get_kubectl() {
   fi
 }
 
+get_kubectl "1.9.8"
 get_kubectl "1.9.1"
 get_kubectl "1.7.12"
 get_kubectl "1.8.6"
 
-set_current_version "kubectl" "1.9.1"
+set_current_version "kubectl" "1.9.8"
 
 # helm
 get_helm() {
