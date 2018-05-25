@@ -75,10 +75,11 @@ get_go () {
   fi
 }
 
+get_go "1.10.2"
 get_go "1.9.2"
 get_go "1.8.5"
 
-set_current_version "go" "1.9.2"
+set_current_version "go" "1.10.2"
 
 mkdir -p $HOME/Data/go
 
