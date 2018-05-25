@@ -13,6 +13,7 @@ sudo dnf install -y \
   ctags \
   docker \
   exa \
+  fedora-workstation-repositories \
   gcc-c++ \
   gnome-tweak-tool \
   httpie \
@@ -39,6 +40,9 @@ sudo dnf install -y \
   vim-X11 \
   yp-tools \
   zsh
+
+sudo dnf config-manager --set-enabled google-chrome
+sudo dnf install -y google-chrome-stable
 
 if [[ ! -x "$(command -v keybase)" ]]; then
  sudo dnf install -y https://prerelease.keybase.io/keybase_amd64.rpm
