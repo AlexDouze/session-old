@@ -216,12 +216,13 @@ get_vault() {
   fi
 }
 
+get_vault "0.10.1"
 get_vault "0.10.0"
 get_vault "0.9.5"
 get_vault "0.9.1"
 get_vault "0.8.3"
 
-set_current_version "vault" "0.10.0"
+set_current_version "vault" "0.10.1"
 
 # # Terraform
 get_terraform() {
