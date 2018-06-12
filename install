@@ -8,29 +8,36 @@ sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/dock
 
 sudo dnf install -y \
   ansible \
+  arandr \
   chromium \
   cmake \
+  conky \
   ctags \
+  dmenu \
   docker \
   exa \
   fedora-workstation-repositories \
+  feh \
+  fuse-sshfs \
   gcc-c++ \
   gnome-tweak-tool \
-  httpie \
   htop \
+  httpie \
+  i3 \
+  i3lock \
+  i3status \
   jq \
   lcov \
   libtool \
   meld \
   mosquitto \
   nmap \
-  python-devel \
-  python3-devel \
   python2-ipython \
+  python3-devel \
   python3-ipython \
+  python-devel \
   ruby \
   ruby-devel \
-  fuse-sshfs \
   sqlite \
   syncthing \
   tig \
@@ -38,6 +45,7 @@ sudo dnf install -y \
   util-linux-user \
   vim-enhanced \
   vim-X11 \
+  xbacklight \
   yp-tools \
   zsh
 
@@ -277,6 +285,9 @@ echo "Create symlink for vim"
 ln -sf $PWD/vim/vimrc $HOME/.vimrc
 ln -sf $PWD/vim/monokai-phoenix.vim $HOME/.vim/colors/monokai-phoenix.vim
 vimx +PluginInstall +qall
+
+echo "Create symlink for i3"
+ln -sf $PWD/config/i3-config $HOME/.config/i3/config
 
 echo "Create symlink for x509"
 sudo ln -sf $PWD/scripts/x509 /usr/bin/x509
