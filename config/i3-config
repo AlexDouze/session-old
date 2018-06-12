@@ -170,3 +170,6 @@ bindsym $mod+Shift+Return exec i3lock
 bar {
         status_command i3status
 }
+
+exec --no-startup-id xrandr --output DP-1 --auto --left-of HDMI-1 --rotate left
+exec --no-startup-id xrandr --output DP-2 --auto --pos 3120x0
