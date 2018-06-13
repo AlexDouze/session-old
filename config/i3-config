@@ -185,3 +185,5 @@ hide_edge_borders both
 client.focused            $green  $green  #000000 #07a3b2 #285577
 client.unfocused          #000000 #000000 $blue   #07a3b2 #285577
 client.focused_inactive   #000000 #000000 $blue   #07a3b2 #285577
+
+mouse_warping none
