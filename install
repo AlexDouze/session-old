@@ -287,6 +287,7 @@ ln -sf $PWD/vim/monokai-phoenix.vim $HOME/.vim/colors/monokai-phoenix.vim
 vimx +PluginInstall +qall
 
 echo "Create symlink for i3"
+mkdir -p $HOME/.config/i3
 ln -sf $PWD/config/i3-config $HOME/.config/i3/config
 
 echo "Create symlink for x509"
