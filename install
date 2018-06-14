@@ -289,6 +289,7 @@ vimx +PluginInstall +qall
 echo "Create symlink for i3"
 mkdir -p $HOME/.config/i3
 ln -sf $PWD/config/i3-config $HOME/.config/i3/config
+ln -sf $PWD/config/i3status.conf $HOME/.config/i3/i3status.conf
 
 echo "Create symlink for x509"
 sudo ln -sf $PWD/scripts/x509 /usr/bin/x509
