@@ -46,3 +46,6 @@ burn_iso2usb () {
 [ -f /home/douze/.travis/travis.sh ] && source /home/douze/.travis/travis.sh
 
 setxkbmap -option caps:escape
+
+# ssh-agent
+eval $(ssh-agent)
