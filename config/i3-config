@@ -164,7 +164,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+Shift+Return exec i3lock
+bindsym $mod+Shift+Return exec i3lock -e
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%-
 bindsym XF86AudioMute exec amixer -q set Master toggle
