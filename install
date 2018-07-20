@@ -20,6 +20,7 @@ sudo dnf install -y \
   fedora-workstation-repositories \
   feh \
   fuse-sshfs \
+  fzf \
   gcc-c++ \
   gnome-tweak-tool \
   htop \
