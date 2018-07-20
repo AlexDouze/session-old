@@ -55,3 +55,6 @@ export KOPS_STATE_STORE=s3://easymile-dev-clusters
 alias randpass='openssl rand -base64 32 | tr -d /=+ | cut -c -32'
 alias ls='exa'
 alias fini='notify-send "finished" "The task is finished"'
+
+
+alias kbx='kbn $(kb get ns | fzf)'
