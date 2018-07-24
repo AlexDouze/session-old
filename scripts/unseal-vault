@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+if [[ -z $1 ]];
+then
+ echo "Usage ./unseal-vault VAULT_ORDINAL_NUMBER"
+ echo
+ echo "Where ordinal number is the number of the vault to unseal"
+ exit 1
+fi
+
+KEYBASE_USERNAME="alex12"
+TOKEN=$(tail -n 1 /keybase/team/easymile.vault/old/$KEYBASE_USERNAME.key)
+UNSEAL_KEY=$(echo $TOKEN | base64 -d | keybase pgp decrypt)
+KOPS_STATE_STORE=s3://easymile-production-clusters
+
+kops export kubecfg --name eu.internal.easymile.com
+
+kubectl exec -it --namespace vault vault-vault-$1 vault operator unseal $UNSEAL_KEY

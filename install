@@ -296,6 +296,7 @@ ln -sf $PWD/config/i3status.conf $HOME/.config/i3/i3status.conf
 
 echo "Create symlink for x509"
 sudo ln -sf $PWD/scripts/x509 /usr/bin/x509
+sudo ln -sf $PWD/scripts/unseal-vault /usr/bin/unseal-vault
 
 chsh -s /bin/zsh
 
