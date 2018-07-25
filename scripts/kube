@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ -z $1 ]]; then
+  IMAGE="fedora:latest"
+else
+  IMAGE=$1
+fi
+
+kubectl run kube --image=$IMAGE --replicas=1 --namespace default --labels="app=temp-kube" -it bash
+kubectl delete deployment kube
