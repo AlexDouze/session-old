@@ -58,3 +58,27 @@ alias fini='notify-send "finished" "The task is finished"'
 
 
 alias kbx='kbn $(kb get ns | fzf)'
+
+
+# Slaves aliases
+alias tower="ssh builder@192.168.42.110"
+alias tower5600-1="ssh builder@192.168.42.239"
+alias tower5600-2="ssh builder@192.168.42.189"
+alias tower5600-3="ssh builder@192.168.42.119"
+alias tower7600-1="ssh builder@192.168.42.191"
+alias tower7910-1="ssh builder@192.168.42.81"
+
+alias z600-1="ssh builder@192.168.42.99"
+alias z600-2="ssh builder@192.168.42.76"
+alias z600-3="ssh builder@192.168.42.180"
+
+alias z620-1="ssh builder@192.168.42.234"
+alias z620-2="ssh builder@192.168.42.233"
+alias z620-3="ssh builder@192.168.42.235"
+alias z620-4="ssh builder@192.168.42.242"
+alias z620-5="ssh builder@192.168.42.231"
+alias z620-6="ssh builder@192.168.42.237"
+alias z620-7="ssh builder@192.168.42.171"
+alias z620-8="ssh builder@192.168.42.230"
+alias z620-9="ssh builder@192.168.42.222"
+alias z620-10="ssh builder@192.168.42.241"
