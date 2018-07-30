@@ -13,6 +13,7 @@ sudo dnf install -y \
   chromium \
   cmake \
   conky \
+  consul \
   ctags \
   dmenu \
   docker \
