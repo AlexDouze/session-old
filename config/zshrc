@@ -49,3 +49,7 @@ setxkbmap -option caps:escape
 
 # ssh-agent
 eval $(ssh-agent)
+
+qos () {
+  kubectl get po -o jsonpath='{range .items[*]}{.metadata.name}:   {.status.qosClass}{"\n"}{end}'
+}
