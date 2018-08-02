@@ -86,7 +86,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+Shift+A focus parent
@@ -183,6 +183,7 @@ bar {
 
 exec --no-startup-id xrandr --output DP-1 --auto --left-of HDMI-1 --rotate left
 exec --no-startup-id xrandr --output DP-2 --auto --pos 3120x0
+bindsym $mod+space exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -theme lb
 
 # Styling
 set $blue #66D9EF

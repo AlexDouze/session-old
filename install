@@ -5,6 +5,7 @@ sudo dnf --refresh update -y
 sudo dnf -y install dnf-plugins-core
 
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf copr enable yaroslav/i3desktop -y
 
 sudo dnf install -y \
   ack \
@@ -39,6 +40,7 @@ sudo dnf install -y \
   python3-devel \
   python3-ipython \
   python-devel \
+  rofi \
   ruby \
   ruby-devel \
   scrot \
@@ -271,6 +273,15 @@ get_exercism () {
 get_exercism "2.4.1"
 
 set_current_version "exercism" "2.4.1"
+
+
+# Get greenclip
+sudo wget https://github.com/erebe/greenclip/releases/download/3.0/greenclip -O /usr/bin/greenclip
+sudo chmod +x /usr/bin/greenclip
+ln -sf $PWD/services/greenclip.service $HOME/.config/systemd/user/greenclip.service
+systemctl --user enable greenclip
+systemctl --user start greenclip
+
 
 
 # Create symlinks for config files
