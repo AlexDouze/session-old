@@ -18,6 +18,7 @@ sudo dnf install -y \
   ctags \
   dmenu \
   docker \
+  dunst \
   exa \
   fedora-workstation-repositories \
   feh \
@@ -312,6 +313,9 @@ echo "Create symlink for unseal-vault"
 sudo ln -sf $PWD/scripts/unseal-vault /usr/bin/unseal-vault
 echo "Create symlink for kube"
 sudo ln -sf $PWD/scripts/kube /usr/bin/kube
+echo "Create symlink for dunst"
+mkdir -p $HOME/.config/dunst
+sudo ln -sf $PWD/config/dunstrc $HOME/.config/dunst/dunstrc
 
 chsh -s /bin/zsh
 
