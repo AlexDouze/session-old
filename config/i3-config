@@ -176,8 +176,8 @@ bar {
         status_command i3status --config ~/.config/i3/i3status.conf
         colors {
           background #000000
-          focused_workspace #000000 #A6E22E
-          active_workspace #ffffff #66D9EF
+          focused_workspace #ffffff #285577
+          active_workspace #ffffff #000000
         }
 }
 
@@ -186,12 +186,13 @@ exec --no-startup-id xrandr --output DP-2 --auto --pos 3120x0
 bindsym $mod+space exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -theme lb
 
 # Styling
-set $blue #66D9EF
+set $blue #285577
 set $green #A6E22E
+set $white #ffffff
 hide_edge_borders both
 # client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
-client.focused            $green  $green  #000000 #07a3b2 #285577
-client.unfocused          #000000 #000000 $blue   #07a3b2 #285577
-client.focused_inactive   #000000 #000000 $blue   #07a3b2 #285577
+client.focused            $blue  $blue  $white #07a3b2 #285577
+client.unfocused          #000000 #000000 $white   #07a3b2 #285577
+client.focused_inactive   #000000 #000000 $white   #07a3b2 #285577
 
 mouse_warping none
