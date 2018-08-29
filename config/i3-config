@@ -197,3 +197,5 @@ client.focused_inactive   $black $black $white $blue $blue
 # client.background
 
 mouse_warping none
+exec --no-startup-id gnome-keyring-daemon -s
+
