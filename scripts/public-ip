@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Detecting the external IP of the proxy gateway..."
+PROXY_GATEWAY_IP=$(curl -s ifconfig.co)
+echo "... External IP address is: ${PROXY_GATEWAY_IP}"

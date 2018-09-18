@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for cluster in $(aws s3 ls |grep cluster | awk '{print $3}'); do
+  echo "STATE_STORE: $cluster"
+  KOPS_STATE_STORE=s3://$cluster kops get cluster
+  echo
+  echo
+done
