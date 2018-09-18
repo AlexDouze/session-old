@@ -307,12 +307,6 @@ mkdir -p $HOME/.config/i3
 ln -sf $PWD/config/i3-config $HOME/.config/i3/config
 ln -sf $PWD/config/i3status.conf $HOME/.config/i3/i3status.conf
 
-echo "Create symlink for x509"
-sudo ln -sf $PWD/scripts/x509 /usr/bin/x509
-echo "Create symlink for unseal-vault"
-sudo ln -sf $PWD/scripts/unseal-vault /usr/bin/unseal-vault
-echo "Create symlink for kube"
-sudo ln -sf $PWD/scripts/kube /usr/bin/kube
 echo "Create symlink for dunst"
 mkdir -p $HOME/.config/dunst
 sudo ln -sf $PWD/config/dunstrc $HOME/.config/dunst/dunstrc
