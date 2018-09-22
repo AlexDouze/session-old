@@ -1,0 +1,3 @@
+#!/bin/bash
+
+kubectl get pods --show-all | grep Evicted | awk '{print $1}' | xargs kubectl delete po
