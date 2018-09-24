@@ -182,7 +182,7 @@ get_helm "2.8.0"
 get_helm "2.7.2"
 get_helm "2.6.2"
 
-set_current_version "helm" "2.8.2"
+set_current_version "helm" "2.9.1"
 
 helm init --client-only
 if [[ -z $(helm plugin list | grep s3) ]]; then
