@@ -1,6 +1,10 @@
 [user]
 	email = alexandre.ledit@easymile.com
 	name = Alexandre Ledit
+  signingkey = 896E477C636D0DDE705886C4803F3D6ECAC504EC
+
+[commit]
+  gpgsign = true
 
 [push]
 	default = simple
@@ -30,3 +34,5 @@
     prune = true
 [diff]
     tool = vimdiff
+[gpg]
+	program = gpg2
