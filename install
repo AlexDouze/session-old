@@ -19,6 +19,7 @@ sudo dnf install -y \
   dmenu \
   docker \
   dunst \
+  encfs \
   exa \
   fedora-workstation-repositories \
   feh \
@@ -26,6 +27,7 @@ sudo dnf install -y \
   fzf \
   gcc-c++ \
   gnome-tweak-tool \
+  gparted \
   htop \
   httpie \
   i3 \
