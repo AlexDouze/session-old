@@ -198,4 +198,4 @@ client.focused_inactive   $black $black $white $blue $blue
 
 mouse_warping none
 exec --no-startup-id gnome-keyring-daemon -s
-
+exec --no-startup-id gpg-agent --daemon --enable-ssh-support
