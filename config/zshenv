@@ -47,7 +47,7 @@ alias dk='docker'
 alias sync-browser='syncthing -browser-only'
 
 # Vault
-export VAULT_ADDR=https://vault.eu.easymile.com:8200
+export VAULT_ADDR=https://vault.easymile.com
 
 # Kubernetes
 export KOPS_STATE_STORE=s3://easymile-dev-clusters
