@@ -83,3 +83,5 @@ alias z620-8="ssh builder@192.168.42.230"
 alias z620-9="ssh builder@192.168.42.222"
 alias z620-10="ssh builder@192.168.42.241"
 alias z620-11="ssh builder@192.168.42.87"
+
+alias nopush="git remote set-url --push upstream no_push"
