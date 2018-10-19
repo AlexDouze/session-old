@@ -38,6 +38,7 @@ sudo dnf install -y \
   libtool \
   meld \
   mosquitto \
+  NetworkManager-l2tp \
   nmap \
   python2-ipython \
   python2-libselinux \
@@ -286,6 +287,15 @@ sudo chmod +x /usr/bin/greenclip
 ln -sf $PWD/services/greenclip.service $HOME/.config/systemd/user/greenclip.service
 systemctl --user enable greenclip
 systemctl --user start greenclip
+
+# VPN connections
+export GPG=gpg2
+blackbox_decrypt_all_files
+sudo cp $PWD/config/Easymile-Office /etc/NetworkManager/system-connections/Easymile-Office
+sudo chmod 600 /etc/NetworkManager/system-connections/Easymile-Office
+rm -f $PWD/config/Easymile-Office
+sudo systemctl daemon-reload
+sudo systemctl restart NetworkManager
 
 
 
