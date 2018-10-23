@@ -35,6 +35,7 @@ sudo dnf install -y \
   i3status \
   jq \
   lcov \
+  libffi-devel \
   libtool \
   meld \
   mosquitto \
@@ -47,6 +48,7 @@ sudo dnf install -y \
   python3-ipython \
   python-devel \
   rofi \
+  rpm-build \
   ruby \
   ruby-devel \
   scrot \
@@ -287,6 +289,19 @@ sudo chmod +x /usr/bin/greenclip
 ln -sf $PWD/services/greenclip.service $HOME/.config/systemd/user/greenclip.service
 systemctl --user enable greenclip
 systemctl --user start greenclip
+
+# Install blackbox
+if [[ ! -d $HOME/.blackbox ]]; then
+  git clone git@github.com:StackExchange/blackbox $HOME/.blackbox
+fi
+if [[ ! -x "$(command -v fpm)" ]]; then
+  gem install --no-ri --no-rdoc fpm
+fi
+pushd $HOME/.blackbox
+make packages-rpm
+popd
+sudo dnf install -y $HOME/rpmbuild-stack_blackbox/stack_blackbox-1.0-468.noarch.rpm 
+rm -rf $HOME/rpmbuild-stack_blackbox
 
 # VPN connections
 export GPG=gpg2
