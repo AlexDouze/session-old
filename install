@@ -313,6 +313,15 @@ rm -f $PWD/config/Easymile-Office
 sudo systemctl daemon-reload
 sudo systemctl restart NetworkManager
 
+# SSH conf
+cp $PWD/config/authorized_keys $HOME/.ssh/authorized_keys
+chmod 600 $HOME/.ssh/authorized_keys
+sudo cp $PWD/config/sshd_config /etc/ssh/sshd_config
+sudo chown root:root /etc/ssh/sshd_config
+sudo chmod 600 /etc/ssh/sshd_config
+sudo systemctl enable sshd
+sudo systemctl restart sshd
+
 
 
 # Create symlinks for config files
