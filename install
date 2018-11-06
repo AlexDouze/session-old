@@ -4,8 +4,7 @@ set -e
 sudo dnf --refresh update -y
 sudo dnf -y install dnf-plugins-core
 
-sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-sudo dnf copr enable yaroslav/i3desktop -y
+sudo dnf copr enable fusion809/Rofi -y
 
 sudo dnf install -y \
   ack \
@@ -118,7 +117,7 @@ gem install travis
 
 # Zprezto
 if [ ! -d "$HOME/.zprezto" ]; then
-	git clone --recursive git@github.com:AlexDouze/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+	git clone --recursive https://github.com/AlexDouze/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 fi
 if [ ! -d "$HOME/.zprezto-contrib" ]; then
   git clone --recursive https://github.com/AlexDouze/prezto-contrib.git "${ZDOTDIR:-$HOME}/.zprezto-contrib"
@@ -294,7 +293,7 @@ systemctl --user start greenclip
 
 # Install blackbox
 if [[ ! -d $HOME/.blackbox ]]; then
-  git clone git@github.com:StackExchange/blackbox $HOME/.blackbox
+  git clone https://github.com/StackExchange/blackbox $HOME/.blackbox
 fi
 if [[ ! -x "$(command -v fpm)" ]]; then
   gem install --no-ri --no-rdoc fpm
@@ -304,6 +303,9 @@ make packages-rpm
 popd
 sudo dnf install -y $HOME/rpmbuild-stack_blackbox/stack_blackbox-1.0-468.noarch.rpm 
 rm -rf $HOME/rpmbuild-stack_blackbox
+if [[ -z $(echo $PATH | grep blackbox) ]]; then
+  export PATH=/usr/blackbox/bin:$PATH
+fi
 
 # VPN connections
 export GPG=gpg2
