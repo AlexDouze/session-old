@@ -13,6 +13,7 @@ fi
 export GOROOT=$HOME/.local/bin/go
 export GOPATH=$HOME/Data/go
 export PATH=$PATH:$HOME/.local/bin:$HOME/.local/bin/go/bin:$GOPATH/bin:$HOME/.session/scripts
+export EDITOR=vim
 
 # vim
 alias vi='vimx'
