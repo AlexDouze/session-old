@@ -35,6 +35,7 @@ alias v='f -e vim'       # quick opening files with vim
 alias ggr="git graph"
 alias ggra="git graph --all"
 alias subup="git submodule sync && git submodule update --init --recursive"
+alias gy="git sync"
 
 # watch
 alias wa='watch -n 0.1'

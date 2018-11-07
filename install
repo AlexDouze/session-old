@@ -30,6 +30,7 @@ sudo dnf install -y \
   gparted \
   htop \
   httpie \
+  hub \
   i3 \
   i3lock \
   i3status \

@@ -21,6 +21,7 @@
     logl = log --pretty=oneline --abbrev-commit
     unadd = reset HEAD
     graph = log --date-order --date=iso --graph --pretty=format:'%C(auto)%h%Creset %Cblue%an%Creset %Cgreen%ar%Creset %C(auto)%s %d'
+    sync = "! hub sync"
 
 [core]
     pager = less
