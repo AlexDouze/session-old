@@ -44,9 +44,9 @@ sudo dnf install -y \
   nmap \
   python2-ipython \
   python2-libselinux \
-  python3-libselinux \
   python3-devel \
   python3-ipython \
+  python3-libselinux \
   python-devel \
   rofi \
   rpm-build \
