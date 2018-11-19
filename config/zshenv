@@ -87,3 +87,7 @@ alias z620-10="ssh builder@192.168.42.241"
 alias z620-11="ssh builder@192.168.42.87"
 
 alias nopush="git remote set-url --push upstream no_push"
+
+# Sound
+alias stereo="pacmd set-card-profile 0 output:analog-stereo+input:analog-stereo"
+alias hdmi="pacmd set-card-profile 0 output:hdmi-surround+input:analog-stereo"
