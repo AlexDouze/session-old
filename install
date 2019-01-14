@@ -335,6 +335,23 @@ sudo chmod 600 /etc/ssh/sshd_config
 sudo systemctl enable sshd
 sudo systemctl restart sshd
 
+# Install vscode extension
+code --install-extension aaron-bond.better-comments
+code --install-extension CoenraadS.bracket-pair-colorizer
+code --install-extension donjayamanne.githistory
+code --install-extension eamodio.gitlens
+code --install-extension KnisterPeter.vscode-commitizen
+code --install-extension lamartire.git-indicators
+code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+code --install-extension ms-python.python
+code --install-extension PeterJausovec.vscode-docker
+code --install-extension redhat.vscode-yaml
+code --install-extension samuelcolvin.jinjahtml
+code --install-extension secanis.jenkinsfile-support
+code --install-extension shardulm94.trailing-spaces
+code --install-extension technosophos.vscode-helm
+code --install-extension vscoss.vscode-ansible
+code --install-extension yzhang.markdown-all-in-one
 
 
 # Create symlinks for config files
