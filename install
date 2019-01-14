@@ -352,6 +352,7 @@ code --install-extension shardulm94.trailing-spaces
 code --install-extension technosophos.vscode-helm
 code --install-extension vscoss.vscode-ansible
 code --install-extension yzhang.markdown-all-in-one
+code --install-extension MS-vsliveshare.vsliveshare
 
 
 # Create symlinks for config files
