@@ -25,6 +25,7 @@ sudo dnf install -y \
   exa \
   fedora-workstation-repositories \
   feh \
+  freemind \
   fuse-sshfs \
   fzf \
   gcc-c++ \
