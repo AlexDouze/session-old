@@ -273,6 +273,17 @@ get_terraform "0.11.7"
 
 set_current_version "terraform" "0.11.7"
 
+
+# Postman
+if [[ ! -f "$HOME/.local/bin/postman" ]]; then
+  echo "Getting postman"
+  wget -O $HOME/postman.tgz https://dl.pstmn.io/download/version/6.7.1/linux64
+  tar xvzf $HOME/postman.tgz -C $HOME/.local/
+  ln -sf $HOME/.local/Postman/Postman $HOME/.local/bin/postman
+  rm -f $HOME/postman.tgz
+fi
+
+
 # Create syncthing service
 mkdir -p $HOME/.config/systemd/user/
 sudo wget -O $HOME/.config/systemd/user/syncthing.service https://raw.githubusercontent.com/syncthing/syncthing/master/etc/linux-systemd/user/syncthing.service
