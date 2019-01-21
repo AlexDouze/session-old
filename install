@@ -77,6 +77,14 @@ fi
 
 sudo dnf group install -y "Development Libraries" "Development Tools"
 
+# Install linuxbrew
+if [[ ! -d "$HOME/.linuxbrew/Homebrew" ]]; then
+  git clone https://github.com/Homebrew/brew ~/.linuxbrew/Homebrew
+  mkdir ~/.linuxbrew/bin
+  ln -s ~/.linuxbrew/Homebrew/bin/brew ~/.linuxbrew/bin
+  eval $(~/.linuxbrew/bin/brew shellenv)
+fi
+
 # Enable and start docker daemon
 if getent group docker; then
   echo "docker group exist"
