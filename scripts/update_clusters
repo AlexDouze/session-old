@@ -1,0 +1,13 @@
+#!/bin/bash
+
+KOPS_STATE_STORES="s3://easymile-production-clusters s3://easymile-dev-clusters"
+
+rm -rf ~/.kube
+
+for STATE_STORE in $KOPS_STATE_STORES; do
+  echo "STATE_STORE: $STATE_STORE"
+  CLUSTERS=$(kops get cluster --state $STATE_STORE | tail -n +2 | awk '{print $1}')
+  for CLUSTER in $CLUSTERS; do
+    kops export kubecfg --state $STATE_STORE --name $CLUSTER
+  done
+done
