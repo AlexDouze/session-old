@@ -45,6 +45,7 @@ sudo dnf install -y \
   mosquitto \
   NetworkManager-l2tp \
   nmap \
+  opensc \
   python2-ipython \
   python2-libselinux \
   python3-devel \
