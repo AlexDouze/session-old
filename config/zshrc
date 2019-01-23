@@ -28,32 +28,12 @@ if [[ -x "$(command -v helm)" ]]; then
 fi
 
 source $HOME/.local/bin/aws_zsh_completer.sh
-# Customize to your needs...
-
 
 source <(kops completion zsh)
-
-burn_iso2usb () {
-  if [ -z "$1" ] || [ -z "$2" ]
-  then
-    printf "Usage: burn_iso2usb <path to iso> <usb drive>\n"
-    return
-  fi
-  sudo dd bs=4M if="$1" of="$2" status=progress && sync
-}
-
-# added by travis gem
-[ -f /home/douze/.travis/travis.sh ] && source /home/douze/.travis/travis.sh
 
 setxkbmap -option caps:escape
 
 # export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 export SSH_AUTH_SOCK=/run/user/1000/gnupg/S.gpg-agent.ssh
-
-qos () {
-  kubectl get po -o jsonpath='{range .items[*]}{.metadata.name}:   {.status.qosClass}{"\n"}{end}'
-}
-
-sudo setenforce Permissive
 
 eval $(~/.linuxbrew/bin/brew shellenv)

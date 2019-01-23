@@ -70,6 +70,8 @@ sudo dnf install -y \
 sudo dnf config-manager --set-enabled google-chrome
 sudo dnf install -y google-chrome-stable
 
+#SELinux
+sudo cp $PWD/config/selinux /etc/selinux/config
 
 if [[ ! -x "$(command -v keybase)" ]]; then
  sudo dnf install -y https://prerelease.keybase.io/keybase_amd64.rpm
