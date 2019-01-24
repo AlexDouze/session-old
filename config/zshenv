@@ -12,7 +12,7 @@ fi
 # Add local pyhton path
 export GOROOT=$HOME/.local/bin/go
 export GOPATH=$HOME/Data/go
-export PATH=$PATH:$HOME/.local/bin:$HOME/.local/bin/go/bin:$GOPATH/bin:$HOME/.session/scripts
+export PATH=$PATH:$HOME/.local/bin:$HOME/.local/bin/go/bin:$GOPATH/bin:$HOME/.session/scripts:$HOME/.devops-snippets
 export EDITOR=vim
 
 source $HOME/.secret-env

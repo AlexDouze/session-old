@@ -80,6 +80,15 @@ fi
 
 sudo dnf group install -y "Development Libraries" "Development Tools"
 
+# DevOps snippet
+if [[ ! -d "$HOME/.devops-snippets" ]]; then
+  git clone git@bitbucket.org:knightindustries/devops-snippets $HOME/.devops-snippets
+else
+  pushd $HOME/.devops-snippets
+  git pull
+  popd
+fi
+
 # Install linuxbrew
 if [[ ! -d "$HOME/.linuxbrew/Homebrew" ]]; then
   git clone https://github.com/Homebrew/brew ~/.linuxbrew/Homebrew
