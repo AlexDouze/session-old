@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KOPS_STATE_STORES="s3://easymile-production-clusters s3://easymile-dev-clusters s3://easymile-sandbox-clusters"
+KOPS_STATE_STORES="s3://easymile-production-clusters s3://easymile-dev-clusters s3://easymile-sandbox-clusters s3://easymile-test-clusters"
 
 rm -rf ~/.kube
 
