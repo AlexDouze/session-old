@@ -19,7 +19,7 @@ sudo dnf install -y \
   consul \
   ctags \
   dmenu \
-  docker \
+  docker-ce \
   dunst \
   encfs \
   exa \
