@@ -386,6 +386,10 @@ code --install-extension vscoss.vscode-ansible
 code --install-extension yzhang.markdown-all-in-one
 code --install-extension MS-vsliveshare.vsliveshare
 
+#Rambox
+wget https://github.com/ramboxapp/community-edition/releases/download/0.6.3/Rambox-0.6.3-linux-x86_64.AppImage -O $HOME/.local/bin/rambox
+chmod +x $HOME/.local/bin/rambox
+
 
 # Create symlinks for config files
 echo "Create symlink for tmux configuration"
