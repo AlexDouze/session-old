@@ -7,6 +7,7 @@ sudo dnf -y install dnf-plugins-core
 sudo dnf copr enable fusion809/Rofi -y
 sudo dnf config-manager --add-repo=https://packages.microsoft.com/yumrepos/vscode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 
 sudo dnf install -y \
   ack \
