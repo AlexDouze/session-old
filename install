@@ -395,8 +395,10 @@ code --install-extension MS-vsliveshare.vsliveshare
 code --install-extension vscodevim.vim
 
 #Rambox
-wget https://github.com/ramboxapp/community-edition/releases/download/0.6.4/Rambox-0.6.4-linux-x86_64.AppImage -O $HOME/.local/bin/rambox
-chmod +x $HOME/.local/bin/rambox
+if [[ ! -f "$HOME/.local/bin/rambox" ]]; then
+  wget https://github.com/ramboxapp/community-edition/releases/download/0.6.4/Rambox-0.6.4-linux-x86_64.AppImage -O $HOME/.local/bin/rambox
+  chmod +x $HOME/.local/bin/rambox
+fi
 
 
 # Create symlinks for config files
