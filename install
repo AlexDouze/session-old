@@ -392,6 +392,7 @@ code --install-extension technosophos.vscode-helm
 code --install-extension vscoss.vscode-ansible
 code --install-extension yzhang.markdown-all-in-one
 code --install-extension MS-vsliveshare.vsliveshare
+code --install-extension vscodevim.vim
 
 #Rambox
 wget https://github.com/ramboxapp/community-edition/releases/download/0.6.4/Rambox-0.6.4-linux-x86_64.AppImage -O $HOME/.local/bin/rambox
