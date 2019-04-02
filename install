@@ -393,6 +393,7 @@ code --install-extension vscoss.vscode-ansible
 code --install-extension yzhang.markdown-all-in-one
 code --install-extension MS-vsliveshare.vsliveshare
 code --install-extension vscodevim.vim
+code --install-extension ramiroberrelleza.bitbucket-pull-requests
 
 #Rambox
 if [[ ! -f "$HOME/.local/bin/rambox" ]]; then
