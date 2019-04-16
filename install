@@ -312,8 +312,8 @@ fi
 # Create syncthing service
 mkdir -p $HOME/.config/systemd/user/
 sudo wget -O $HOME/.config/systemd/user/syncthing.service https://raw.githubusercontent.com/syncthing/syncthing/master/etc/linux-systemd/user/syncthing.service
-systemctl --user enable syncthing.service
-systemctl --user start syncthing.service
+# systemctl --user enable syncthing.service
+# systemctl --user start syncthing.service
 
 # Exercism
 get_exercism () {
