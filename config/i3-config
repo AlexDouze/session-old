@@ -186,7 +186,7 @@ bar {
 }
 
 exec --no-startup-id xrandr --output DP-1 --auto --left-of HDMI-1 --rotate left
-exec --no-startup-id xrandr --output DP-2 --auto --pos 3120x0
+exec --no-startup-id xrandr --output DP-2 --auto --right-of HDMI-1
 bindsym $mod+space exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -theme /usr/share/rofi/themes/Pop-Dark.rasi
 
 # Styling
