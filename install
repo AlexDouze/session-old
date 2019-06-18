@@ -383,7 +383,7 @@ code --install-extension KnisterPeter.vscode-commitizen
 code --install-extension lamartire.git-indicators
 code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
 code --install-extension ms-python.python
-code --install-extension PeterJausovec.vscode-docker
+code --install-extension ms-azuretools.vscode-docker
 code --install-extension redhat.vscode-yaml
 code --install-extension samuelcolvin.jinjahtml
 code --install-extension secanis.jenkinsfile-support
