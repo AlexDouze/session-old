@@ -26,7 +26,6 @@ sudo dnf install -y \
   exa \
   fedora-workstation-repositories \
   feh \
-  freemind \
   fuse-sshfs \
   fzf \
   gcc-c++ \
@@ -47,7 +46,7 @@ sudo dnf install -y \
   NetworkManager-l2tp \
   nmap \
   opensc \
-  python2-ipython \
+  python2-devel \
   python2-libselinux \
   python3-devel \
   python3-ipython \
@@ -136,7 +135,15 @@ set_current_version "go" "1.10.2"
 mkdir -p $HOME/Data/go
 
 # Pip install
-pip install --upgrade --user awscli flake8 boto gnupg hvac minio pip consulate
+pip install --upgrade --user \
+  awscli \
+  boto \
+  consulate \
+  flake8 \
+  gnupg \
+  hvac \
+  minio \
+  pip
 
 # Gem install
 gem install travis
@@ -300,13 +307,13 @@ set_current_version "terraform" "0.11.7"
 
 
 # Postman
-if [[ ! -f "$HOME/.local/bin/postman" ]]; then
-  echo "Getting postman"
-  wget -O $HOME/postman.tgz https://dl.pstmn.io/download/version/6.7.1/linux64
-  tar xvzf $HOME/postman.tgz -C $HOME/.local/
-  ln -sf $HOME/.local/Postman/Postman $HOME/.local/bin/postman
-  rm -f $HOME/postman.tgz
-fi
+# if [[ ! -f "$HOME/.local/bin/postman" ]]; then
+  # echo "Getting postman"
+  # wget -O $HOME/postman.tgz https://dl.pstmn.io/download/version/6.7.1/linux64
+  # tar xvzf $HOME/postman.tgz -C $HOME/.local/
+  # ln -sf $HOME/.local/Postman/Postman $HOME/.local/bin/postman
+  # rm -f $HOME/postman.tgz
+# fi
 
 
 # Create syncthing service
@@ -343,12 +350,12 @@ if [[ ! -d $HOME/.blackbox ]]; then
   git clone https://github.com/StackExchange/blackbox $HOME/.blackbox
 fi
 if [[ ! -x "$(command -v fpm)" ]]; then
-  gem install --no-ri --no-rdoc fpm
+  gem install -N fpm
 fi
 pushd $HOME/.blackbox
 make packages-rpm
 popd
-sudo dnf install -y $HOME/rpmbuild-stack_blackbox/stack_blackbox-1.0-468.noarch.rpm 
+sudo dnf install -y $HOME/rpmbuild-stack_blackbox/stack_blackbox-1.0-485.noarch.rpm 
 rm -rf $HOME/rpmbuild-stack_blackbox
 if [[ -z $(echo $PATH | grep blackbox) ]]; then
   export PATH=/usr/blackbox/bin:$PATH
@@ -397,7 +404,7 @@ code --install-extension ramiroberrelleza.bitbucket-pull-requests
 
 #Rambox
 if [[ ! -f "$HOME/.local/bin/rambox" ]]; then
-  wget https://github.com/ramboxapp/community-edition/releases/download/0.6.7/Rambox-0.6.7-linux-x86_64.AppImage -O $HOME/.local/bin/rambox
+  wget https://github.com/ramboxapp/community-edition/releases/download/0.6.8/Rambox-0.6.8-linux-x86_64.AppImage -O $HOME/.local/bin/rambox
   chmod +x $HOME/.local/bin/rambox
 fi
 
