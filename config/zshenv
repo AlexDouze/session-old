@@ -96,3 +96,8 @@ alias hdmi="pacmd set-card-profile 0 output:hdmi-surround+input:analog-stereo"
 
 # Brightness
 alias bright='sudo vim /sys/class/backlight/intel_backlight/brightness'
+
+# Openssl
+alias cert='openssl x509 -noout -text -in'
+alias req='openssl req -noout -text -in'
+alias crl='openssl crl -noout -text -in'
